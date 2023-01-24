@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('pages/head'); %>
+</head>
+<body>
+    <header>
+      <%- include('pages/back-navbar'); %>
+    </header>
+    
+<div class="container p-5 text-center">
+    <h1>Create Book</h1>
+</div>
+
+<div class="container">
+    <a href="/dashboard" class="btn btn-sm btn-primary float-end mb-2">View Bookss</a>
+
+    <form action="/product" method="POST" enctype="multipart/form-data" style="width: 50%; margin:0 auto">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Book name</label>
+            <input type="text" name="name" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"> isPublished</label>
+            <input type="text" name="isPublished" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">datePublished</label>
+            <input type="text" name="datePublished" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">serialNumber</label>
+            <input type="text" name="serialNumber" class="form-control" id="exampleFormControlInput1">
+        </div>
+        
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Add Image</label>
+            <input type="file" name="image" class="form-control" id="exampleFormControlInput1" />
+        </div>
+
+    </form>
+  
+    
+</div>
+
+<!-- <%= user %> -->
+
+
+<%- include('pages/head'); %>
+</body>
+</html>

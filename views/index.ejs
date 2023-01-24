@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('pages/head'); %>
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <section>
+          <%- include('pages/header'); %>
+        </section>
+        <!-- Navbar -->
+      
+        <!-- Background image -->
+        <div
+          class="p-5 text-center bg-image"
+          style="
+            background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
+            height: 400px;
+          "
+        >
+          <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white">
+                <h1 class="mb-3">My Book Labrary</h1>
+                <h4 class="mb-3">Readers are Leaders...</h4>
+                <a class="btn btn-outline-light btn-lg" href="#!" role="button"
+                >Contact Us</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Background image -->
+      </header>
+      <main>
+        <div class="container text-center d-flex justify-content-center align-items-center h-100 p-5">
+          <div class="row align-items-start">
+
+      <!--  -->
+     
+        <% books.map(function(book){ %>
+            <div class="col-md-3">
+              <div class="card mb-3">
+                <!-- <img src="<%=`${book.image}`%>" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                  <h5 class="card-title"><%=book.name%></h5>
+                  <p class="card-text"><%=book.isPublished%></p>
+                  <a href="#" class="btn btn-primary"><%=book.datePublished%></a>
+                  <a href="#" class="btn btn-primary"><%=book.serialNumber%></a>
+                  <a href="<%=`/show/${book.id}` %>" class="btn btn-primary">View</a>
+                  <!-- <a href="/show" class="btn btn-primary">View</a> -->
+                </div>
+              </div>
+            </div>
+            <% }) %>
+      <!--  -->
+          </div>
+        </div>
+      </main>
+      <%- include('pages/footer'); %>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('pages/head'); %> 
+</head>
+<body>
+    <header>
+    <section>
+      <%- include('pages/header'); %> 
+    </section>
+     <!-- Background image -->
+     <div
+     class="text-center bg-image"
+     style="
+       background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
+       height: 200px;
+     "
+   >
+     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+       <div class="d-flex justify-content-center align-items-center">
+         <div class="text-white">
+           <h1 class="mb-3">View book</h1>
+           <h4 class="mb-3">Name of books</h4>
+           <a class="btn btn-outline-light btn-lg" href="#!" role="button"
+           >Buy</a
+           >
+         </div>
+       </div>
+     </div>
+   </div>
+   <!-- Background image -->
+ </header>
+    
+ <div class="px-5 justify-content-center align-items-center p-5 vh-100">
+    <div class="row g-5 ">
+      <div class="col-md-4">
+        <img src=<%=`${section.image}`%> class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+            <h5 class="card-title"><%=`${section.name}`%></h5>
+            <p class="card-text"><%=`${section.brand}`%><span style="color:yellow; font-size: 20px;">*****</span> </p>
+            <p class="card-text"><%=`${section.category}`%><span style="color:crimson"><%=`${section.countInStock}`%></span> </p>
+            <p class="card-text"><%=`${section.description}`%></p>
+            <a href="#" class="btn btn-primary"><%=`${section.price}`%></a>
+            <!-- < href="/" class="btn btn-primary">Add to cart</> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('pages/footer'); %>
+</body>
+</html>

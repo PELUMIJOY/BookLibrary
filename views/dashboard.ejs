@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('pages/head'); %>
+</head>
+<body>
+    <header>
+      <%- include('pages/back-navbar'); %>
+    </header>
+    
+<div class="container p-5 text-center">
+    <h1>Book Table</h1>
+</div>
+
+<div class="container w-80">
+    <a href="/addbook" class="btn btn-sm btn-primary float-end m-4">Add Book</a>
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Image</th>
+                <th scope="col">bookName</th>
+                <th scope="col">isPublished</th>
+                <th scope="col">datePublished</th>
+                <th scope="col">serialNumber</th>
+
+  
+            </tr>
+        </thead>
+        <tbody>
+          <% products.map(function(product, ind){ %>
+            <tr>
+                <th scope="row"><%= ind + 1 %></th>
+                <td> <img src="<%=`${product.image}`%>" width="75px" alt=""> </td>
+                <td><%=`${book.name}`%></td>
+                <td><%=`${book.price}`%></td>
+                <td>
+                  <div class="d-flex justify-content-start">
+                    <a href="/editproduct/<%= book.id %>"><i style="color: yellow;" class="fa-solid fa-pen p-2"> Edit </i></a>
+                    
+                    <form method="POST" action="/product/<%= product.id %>?_method=DELETE">
+                      <!-- <input type="hidden" name="_method" value="DELETE"> -->
+                      <button type="submit" style="border: none; background: none;">  
+                        <i style="color: red;" class="fa-solid fa-trash fa-danger p-2"> Delete</i>
+                      </button>
+                    </form>
+                  </div> 
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('pages/footer'); %>
+</body>
+</html>
